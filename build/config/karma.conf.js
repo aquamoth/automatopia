@@ -1,22 +1,24 @@
 // Karma configuration
-// Generated on Tue Sep 24 2013 14:33:42 GMT-0700 (PDT)
+// Generated on Wed Jan 18 2017 09:00:29 GMT+0700 (Sydostasien, normaltid)
 (function() {
 	"use strict";
 
-	module.exports = function(config) {
+	module.exports = function (config) {
 	  config.set({
 
-	    // base path, that will be used to resolve files and exclude
+	    // base path that will be used to resolve all patterns (eg. files, exclude)
 	    basePath: '../..',
 
 
 	    // frameworks to use
-	    frameworks: ['mocha', 'expect', 'commonjs'],
+	    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+	    frameworks: ['mocha', 'expect', 'requirejs'],
 
 
 	    // list of files / patterns to load in the browser
 	    files: [
-	      'src/client/**/*.js'
+	    	'src/client/test-main.js',
+	    	{ pattern: 'src/client/*.js', included: false }
 	    ],
 
 
@@ -29,12 +31,13 @@
 	    // preprocess matching files before serving them to the browser
 	    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 	    preprocessors: {
-		    'src/client/**/*.js': ['commonjs'],
+
 	    },
 
 
 	    // test results reporter to use
-	    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+	    // possible values: 'dots', 'progress'
+	    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
 	    reporters: ['dots'],
 
 
@@ -55,14 +58,8 @@
 	    autoWatch: false,
 
 
-	    // Start these browsers, currently available:
-	    // - Chrome
-	    // - ChromeCanary
-	    // - Firefox
-	    // - Opera
-	    // - Safari (only Mac)
-	    // - PhantomJS
-	    // - IE (only Windows)
+	    // start these browsers
+	    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 	    browsers: [],
 
 
@@ -71,8 +68,12 @@
 
 
 	    // Continuous Integration mode
-	    // if true, it capture browsers, run tests and exit
-	    singleRun: false
+	    // if true, Karma captures browsers, runs the tests and exits
+	    singleRun: false,
+
+	    // Concurrency level
+	    // how many browser should be started simultaneous
+	    concurrency: Infinity
 	  });
 	};
 

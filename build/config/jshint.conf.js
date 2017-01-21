@@ -20,8 +20,8 @@
 		nonew: true,
 		regexp: true,
 		undef: true,
-		strict: true,
-		globalstrict: true,     // "global" stricts are okay when using CommonJS modules
+		strict: false,
+		globalstrict: true,     // "global" stricts are okay when using RequireJS modules
 		trailing: true
 	};
 
@@ -54,10 +54,10 @@
 	});
 
 	exports.clientGlobals = merge(universalGlobals, {
-		// CommonJS
+		// RequireJS
 		exports: false,
 		require: false,
-		module: false
+        define: false
 	});
 
 }());

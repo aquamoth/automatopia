@@ -1,10 +1,10 @@
 // Copyright (c) 2012 Titanium I.T. LLC. All rights reserved. See LICENSE.txt for details.
 /*global describe, it, expect, example, beforeEach, mocha */
-(function() {
+define(function (require, exports) {
 	"use strict";
 
-	var example = require("./example.js");
-	var constants = require("./constants.js");
+	var example = require("./example");
+	var constants = require("./constants");
 
 	mocha.setup({ignoreLeaks: true});
 
@@ -39,4 +39,4 @@
 		}
 
 	});
-}());
+});

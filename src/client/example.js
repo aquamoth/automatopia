@@ -1,11 +1,10 @@
 // Copyright (c) 2012 Titanium I.T. LLC. All rights reserved. See LICENSE.txt for details.
 
 // A silly little validator function. Just an example.
-
-(function() {
+define(function(require, exports) {
 	"use strict";
 
-	var constants = require("./constants.js");
+	var constants = require("./constants");
 
 	exports.validateTextField = function validateTextField(field) {
 		if (field.value) {
@@ -16,4 +15,4 @@
 		}
 	};
 
-}());
+});
