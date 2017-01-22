@@ -13,9 +13,11 @@
 	var karma = require("../util/karma_runner.js");
 	var browserify = require("../util/browserify_runner.js");
 	var version = require("../util/version_checker.js");
+	var tsc = require("../util/typescript_compiler.js");
 
 	var browsers = require("../config/tested_browsers.js");
 	var jshintConfig = require("../config/jshint.conf.js");
+	var tscConfig = require("../config/typescript.conf.js");
 	var paths = require("../config/paths.js");
 
 	var KARMA_CONFIG = "./build/config/karma.conf.js";
@@ -30,7 +32,7 @@
 	//*** GENERAL
 
 	desc("Lint and test");
-	task("default", ["version", "lint", "test"], function() {
+	task("default", ["version", "typescript", "lint", "test"], function() {
 		var elapsedSeconds = (Date.now() - startTime) / 1000;
 		console.log("\n\nBUILD OK  (" + elapsedSeconds.toFixed(2) + "s)");
 	});
@@ -70,6 +72,14 @@
 		}, complete, fail);
 	}, { async: true });
 
+	task("typescript", function () {
+		process.stdout.write("Compiling TypeScript: ");
+		tsc.compile({
+			files: ["src/client/**/*.ts"],
+			tscPath: tscConfig.tscPath,
+			compilerOptions: tscConfig.compilerOptions
+		}, complete, fail);
+	}, { async: true });
 
 	//*** TEST
 
