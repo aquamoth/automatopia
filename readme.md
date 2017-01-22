@@ -1,6 +1,7 @@
 Automatopia
 ===========
 
+**Fork info**: This fork adds TypeScript support.
 **Fork info**: This fork adds RequireJS support instead of CommonJS to client side scripts.
 
 This repository contains build and test automation for JavaScript applications. It's intended as a starting point for your own JavaScript projects. It's best for standalone applications, not npm modules. It includes:
@@ -26,6 +27,7 @@ You may wonder why this repository includes dependencies (in `node_modules`) and
 
 __Change History:__
 
+* *22 Jan 2017:* **Fork**: Added TypeScript 2.1.5.
 * *22 Jan 2017:* **Fork**: Switched from CommonJS to RequireJS.
 * *21 Sep 2016:* Latest npm dependencies; Node LTS v4.5.0
 * *13 Jun 2016:* Latest npm dependencies; Node LTS v4.4.5
@@ -86,7 +88,7 @@ Download and Setup
 To download the project:
 
 1. Install [Git](http://git-scm.com/downloads).
-2. Clone the latest code only (to save time): `git clone -b RequireJS --single-branch --depth 1 https://github.com/aquamoth/automatopia.git`
+2. Clone the latest code only (to save time): `git clone -b TypeScript --single-branch --depth 1 https://github.com/aquamoth/automatopia.git`
 3. Modify `package.json` to use your Node version in the `engines.node` line. (Run `node --version` to determine your Node version.)
 4. Delete the `.git` directory so you start fresh
 5. Run `git init`, `git add .`, and `git commit -am "Initial commit"` to initialize the git repository.
