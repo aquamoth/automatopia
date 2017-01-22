@@ -1,6 +1,8 @@
 Automatopia
 ===========
 
+**Fork info**: This fork adds RequireJS support instead of CommonJS to client side scripts.
+
 This repository contains build and test automation for JavaScript applications. It's intended as a starting point for your own JavaScript projects. It's best for standalone applications, not npm modules. It includes:
 
 * Automated build (using Jake) with:
@@ -18,10 +20,13 @@ This repository contains build and test automation for JavaScript applications. 
 
 This code was originally developed for James Shore's [Let's Code: Test-Driven JavaScript](http://www.letscodejavascript.com) screencast. See Lessons Learned #16, [JavaScript Workflow 2015](http://www.letscodejavascript.com/v3/episodes/lessons_learned/16), for a detailed description of the front-end and continuous integration workflow.
 
-You may wonder why this repository includes dependencies (in `node_modules`) and IDE settings (in `.idea`). The reasoning is explained in my essay, "[The Reliable Build](http://www.letscodejavascript.com/v3/blog/2014/12/the_reliable_build)." If you prefer not to include these sorts of things in your repo, it's fine to remove them.
+You may wonder why this repository includes dependencies (in `node_modules`) and WebStorm IDE settings (in `.idea`). The reasoning is explained in my essay, "[The Reliable Build](http://www.letscodejavascript.com/v3/blog/2014/12/the_reliable_build)." If you prefer not to include these sorts of things in your repo, it's fine to remove them.
+
+**Fork info**: This fork also includes IDE settings for Visual Studio Community 2015 (in `.vs`). This folder can also safely be deleted.
 
 __Change History:__
 
+* *22 Jan 2017:* **Fork**: Switched from CommonJS to RequireJS.
 * *21 Sep 2016:* Latest npm dependencies; Node LTS v4.5.0
 * *13 Jun 2016:* Latest npm dependencies; Node LTS v4.4.5
 * *22 Jan 2015:* Front-end modules; `watch` script; improved documentation; `jake run`; latest npm dependencies; integration commit messages; general script improvements
@@ -51,6 +56,7 @@ Finding Your Way Around
 This repository consists of the following directories:
 
 * `.idea`: WebStorm IDE settings. (Optional.)
+* `.vs`: Visual Studio 2015 Community IDE settings. (Optional.)
 * `build`: Build, CI, and deployment automation.
 * `build/config`: Build configuration.
 * `build/scripts`: Build scripts. Don't run them directly; they're used by the scripts in the root directory.
@@ -80,13 +86,13 @@ Download and Setup
 To download the project:
 
 1. Install [Git](http://git-scm.com/downloads).
-2. Clone the latest code only (to save time): `git clone --depth 1 https://github.com/jamesshore/automatopia.git`
+2. Clone the latest code only (to save time): `git clone -b RequireJS --single-branch --depth 1 https://github.com/aquamoth/automatopia.git`
 3. Modify `package.json` to use your Node version in the `engines.node` line. (Run `node --version` to determine your Node version.)
 4. Delete the `.git` directory so you start fresh
 5. Run `git init`, `git add .`, and `git commit -am "Initial commit"` to initialize the git repository.
 6. Follow the instructions under "Building and Testing" to make sure everything works.
 
-(Note: You can also download [a zip file of the source code](https://github.com/jamesshore/automatopia/archive/master.zip), but that won't preserve permissions like Git does.)
+(Note: You can also download [a zip file of the source code](https://github.com/aquamoth/automatopia/archive/master.zip), but that won't preserve permissions like Git does.)
 
 To customize the project for your needs:
 
